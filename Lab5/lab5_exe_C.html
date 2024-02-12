@@ -228,28 +228,68 @@ Description : DOM Elements.
 				}
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
-				var elementsP4 = document.getElementsByTagName("nav");
-
+				var elementsP4 = document.getElementsByTagName("article");
 				for (var i = 0; i < elementsP4.length; i++) {
-					elementsP4[i].style.backgroundColor = "#bee336";
+					elementsP4[i].style.fontSize="0px";
 				}
+				var newParagraph = document.createElement("p");
+				newParagraph.textContent = "This is a new paragraph";
+				newParagraph.style.color = "red";
+
+				var newParInsert = document.getElementsByTagName("p")[6];
+				newParInsert.appendChild(newParagraph);
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
-
+				var elementsP5 = document.getElementsByTagName("input");
+				for (var i = 0; i < elementsP5.length; i++) {
+					if (elementsP5[i].name == "name") {
+						elementsP5[i].placeholder = "Name";
+					}
+					if (elementsP5[i].name == "email") {
+						elementsP5[i].placeholder = "Email";
+					}
+				}
+				var elementsp5a = document.getElementsByTagName("textarea")[0];
+				elementsp5a.placeholder = "Message";
 
 				// Task 6: Set the src attribute of the image
-
+				document.getElementsByTagName("img")[0].src= "./images/example.svg";
 
 				// Task 7: Add a new item in the navigation menu
-
+				var newMenuItem = document.createElement("li");
+				var newMenuItemNav = document.createElement("a");
+				newMenuItemNav.href = "#";
+				newMenuItemNav.textContent = "Blog";
+				newMenuItem.appendChild(newMenuItemNav)
+				var newMenuItemInsert = document.getElementsByTagName("ul")[0];
+				newMenuItemInsert.appendChild(newMenuItem);
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
-
+				function ha() {
+					var elementsP5 = document.getElementsByTagName("input");
+				for (var i = 0; i < elementsP5.length; i++) {
+					if (elementsP5[i].type == "button") {
+						elementsP5[i].value = "Submitted";
+						elementsP5[i].disabled = "true";
+					}
+				}
+				}
+				for (var i = 0; i < elementsP5.length; i++) {
+					if (elementsP5[i].type == "button") {
+						elementsP5[i].onclick = function() {ha()};
+					}
+				}
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-
+				var relatedLinks1 = document.getElementsByTagName("a")[7];
+				var relatedLinks2 = document.getElementsByTagName("a")[8];
+				relatedLinks1.style.color = "green";
+				relatedLinks2.style.color = "green";
+				
 
 				// Task 10: Add a red solid border to the footer
+				var footer = document.getElementsByTagName("footer")[0]
+				footer.style.border = "2px solid red";
 			});
 		</script>
 	</body>
